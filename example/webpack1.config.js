@@ -9,28 +9,34 @@ var config = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
-    chunkFilename: '[name].[id].js',
     publicPath: '/dist/',
   },
   module: {
-    rules: [
+    loaders: [
       {
         test: /\.js$/,
-        include: [
-          path.join(__dirname, 'src')
-        ],
-        loader: 'babel-loader',
-        options: {
-          presets: ['es2015']
-        }
+        loader: 'babel?presets[]=es2015'
       }
     ]
   },
+  resolve: {
+    root: [
+      path.resolve('./src'),
+      path.resolve('../node_modules'),
+    ],
+    extensions: ['','.js']
+  },
+  resolveLoader: {
+		root: [
+      path.join(__dirname, "../node_modules"),
+    ]
+  },
   plugins: [
+		new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({
       name: ['manifest'], // Specify the common bundle's name.
     }),
-    new RequireEnsureParallelPlugin(),
+    new RequireEnsureParallelPlugin()
   ],
 }
 
