@@ -1,0 +1,5 @@
+#!/bin/sh
+
+npm install babel-loader babel-preset-es2015 babel-core
+../node_modules/webpack/bin/webpack.js --colors
+python -m SimpleHTTPServer 8000

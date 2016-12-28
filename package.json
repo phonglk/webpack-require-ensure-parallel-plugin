@@ -1,0 +1,30 @@
+{
+  "name": "webpack-require-ensure-parallel-plugin",
+  "version": "0.0.1",
+  "description": "webpack require.ensure in parallel manner (experimental)",
+  "main": "lib/RequireEnsureParallelPlugin.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phonglk/webpack-require-ensure-parallel-plugin.git"
+  },
+  "keywords": [
+    "webpack",
+    "require",
+    "ensure",
+    "parallel",
+    "depdencies",
+    "optimisation"
+  ],
+  "author": "Le Khoi-Phong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phonglk/webpack-require-ensure-parallel-plugin/issues"
+  },
+  "homepage": "https://github.com/phonglk/webpack-require-ensure-parallel-plugin#readme",
+  "dependencies": {
+    "webpack": "^1.14.0"
+  }
+}
