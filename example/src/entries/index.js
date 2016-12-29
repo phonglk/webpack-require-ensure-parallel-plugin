@@ -26,13 +26,15 @@ export default function load(entry) {
         break;
       }
       case 'entry4': {
-        require.ensure([], require => {
-          resolve(require('./entry4').default)
-        }, 'entry4');
+        require.ensureParallel(['./dep1'], require => {
+          require.ensure([], require => {
+            resolve(require('./entry4').default)
+          }, 'entry4');
+        }, 'entry4-required');
         break;
       }
       case 'entry5': {
-        require.ensureParallel(['./dep1', './dep3'], require => {
+        require.ensureParallel(['./dep3', './dep1'], require => {
           require.ensure([], require => {
             resolve(require('./entry5').default)
           }, 'entry5');
