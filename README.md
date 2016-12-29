@@ -79,6 +79,8 @@ Use ensureParallel plugin
  8. entry5 => [entry5]: 2KB
 Total (16KB)
 
+Beside break depdencies into chunks, it also load depdencies in *parallel*. Webpack may have dirty hack to break depdencies into chunk, such as deepening the require.ensure but in that case it won't load in parallel but in linear manner
+
 
 Know issues:
 -------------------------
