@@ -3,6 +3,7 @@ What this plugin does?
 ======================
 
 ![What this plugin does](https://i.imgur.com/FMCdypD.png)
+
 Works with both webpack1 and webpack2 (RC3)
 
 Why we need this ?
