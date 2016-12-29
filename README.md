@@ -25,6 +25,7 @@ Because we only show one or two "entries" at a time, loading the whole bundle is
  4. entry4 => [entry4, dep1]: 4KB
  5. entry5 => [entry5, dep1, dep3]: 6KB
 Total (28 KB) 
+
 In trade of, these chunks generate more KBs than single chunk
 
 Split deeper
@@ -56,6 +57,7 @@ Like this
  9. entry4 => [entry4]: 2KB
  10. entry5 => [entry5]: 2KB
 Total (24KB)
+
 In result, if user already loaded entry1 (with entry1-required loaded), next time user want entry4, he/she does not need to load its depdency again (entry1-required or entry4-required which is optmised removed) and vice versa 
 Unfortunately, currently, webpack only support one single depdendency reuse. I believe this will change in the future, I saw it already support Promise.all for multiple chunks, but the parser/compilation still not.
 So if you load entry5, you need to load the whole its dependencies, which includes dep1 and dep3. *Why not just dep3 ? we already load dep1 right ?*
