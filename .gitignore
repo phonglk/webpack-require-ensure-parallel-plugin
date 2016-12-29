@@ -37,5 +37,10 @@ jspm_packages
 .node_repl_history
 
 example/webpack1/dist/
+example/webpack2/dist/
 
 example/webpack1/index.html
+example/webpack2/index.html
+
+example/webpack1/lib
+example/webpack2/lib

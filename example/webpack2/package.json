@@ -1,12 +1,13 @@
 {
-  "name": "webpack-require-ensure-parallel-plugin-example-webpack1",
+  "name": "webpack-require-ensure-parallel-plugin-example-webpack2",
   "version": "0.0.1",
-  "description": "webpack 1 example",
+  "description": "webpack 2 example",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --colors",
+    "webpack": "npm run cp:lib && webpack --colors",
     "serv": "python -m SimpleHTTPServer 8000",
-    "start": "npm install && npm run webpack && serv"
+    "cp:index": "cp ../index.html .",
+    "cp:lib": "cp -r ../../lib .",
+    "start": "npm install && npm run webpack && npm run cp:index && npm run serv"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,9 @@
   },
   "homepage": "https://github.com/phonglk/webpack-require-ensure-parallel-plugin#readme",
   "dependencies": {
-    "webpack": "^2.1.0-beta.28"
+    "webpack": "^2.1.0-beta.28",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.18.0"
   }
 }

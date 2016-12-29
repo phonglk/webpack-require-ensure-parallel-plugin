@@ -1,10 +1,10 @@
 var webpack = require('webpack');
 var path = require('path');
-var RequireEnsureParallelPlugin = require('../lib/RequireEnsureParallelPlugin');
+var RequireEnsureParallelPlugin = require('./lib/RequireEnsureParallelPlugin');
 
 var config = {
   entry: {
-    app: './src/entry',
+    app: '../src/entry',
   },
   output: {
     path: path.join(__dirname, 'dist'),

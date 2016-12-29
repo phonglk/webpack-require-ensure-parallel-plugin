@@ -4,10 +4,11 @@
   "description": "webpack 1 example",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --colors",
+    "webpack": "npm run cp:lib && webpack --colors",
     "serv": "python -m SimpleHTTPServer 8000",
-    "cp": "cp ../index.html .",
-    "start": "npm install && npm run webpack && npm run cp && npm run serv"
+    "cp:index": "cp ../index.html .",
+    "cp:lib": "cp -r ../../lib .",
+    "start": "npm install && npm run webpack && npm run cp:index && npm run serv"
   },
   "repository": {
     "type": "git",

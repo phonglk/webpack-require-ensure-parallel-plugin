@@ -1,6 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
-var RequireEnsureParallelPlugin = require('../../lib/RequireEnsureParallelPlugin');
+var RequireEnsureParallelPlugin = require('./lib/RequireEnsureParallelPlugin');
 
 var config = {
   entry: {
@@ -22,13 +22,13 @@ var config = {
   resolve: {
     root: [
       path.resolve('../src'),
-      path.resolve('../node_modules'),
+      path.resolve('./node_modules'),
     ],
     extensions: ['','.js']
   },
   resolveLoader: {
 		root: [
-      path.join(__dirname, "../node_modules"),
+      path.join(__dirname, "./node_modules"),
     ]
   },
   plugins: [
