@@ -18,12 +18,15 @@ Let say we have this dependencies graph which if we build into one bundle, it wo
 Split by per entry
 ------------------
 Because we only show one or two "entries" at a time, loading the whole bundle is unecessary. Instead, we load only 4KB or 8KB initially => better initial load 
+
 [Chunk => modules...]
+
  1. entry1 => [entry1, dep1]: 4KB
  2. entry2 => [entry2, dep1, dep2, dep3]: 8KB
  3. entry3 => [entry3, dep2, dep3]: 6KB
  4. entry4 => [entry4, dep1]: 4KB
  5. entry5 => [entry5, dep1, dep3]: 6KB
+
 Total (28 KB) 
 
 In trade of, these chunks generate more KBs than single chunk
@@ -46,6 +49,7 @@ Like this
           }, 'entry4-required');
 
 [Chunk => modules...]
+
  1. entry1-required => [dep1]: 2
  2. entry2-required => [dep1, dep2, dep3]: 6
  3. entry3-required => [dep2, dep3]: 4
@@ -56,6 +60,7 @@ Like this
  8. entry3 => [entry3]: 2KB
  9. entry4 => [entry4]: 2KB
  10. entry5 => [entry5]: 2KB
+
 Total (24KB)
 
 In result, if user already loaded entry1 (with entry1-required loaded), next time user want entry4, he/she does not need to load its depdency again (entry1-required or entry4-required which is optmised removed) and vice versa 
