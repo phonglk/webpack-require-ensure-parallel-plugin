@@ -1,2 +1,2 @@
-let entry5 = 'test5'
-export default entry5;
+let entry4 = 'entry4'
+export default entry4;
