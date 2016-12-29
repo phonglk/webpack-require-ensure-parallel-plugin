@@ -73,10 +73,15 @@ Total (16KB)
 
 
 Know issues:
-
+-------------------------
 - Circular/cross depdencies is not handled well, let say dependency of entry5 is entry1: no, you should break common code of entry5 and entry1 into depXX
 
-TODO:
+Examples
+=================
+Go into the example webpack version and run: npm run start
+
+TODO
+=================
 
 [x] Init basic working source
 
@@ -86,8 +91,8 @@ TODO:
 
 [] Add test for webpack 1 and 2
 
-TO IMPROVE:
-
+TO IMPROVE
+----------
 [] Allow multiple chunks naming and auto chunk naming based on file name
 
 [] Optimise block building
